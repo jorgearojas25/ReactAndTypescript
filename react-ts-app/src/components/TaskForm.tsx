@@ -25,8 +25,8 @@ class TaskForm extends React.Component<ITaskFormProps, any> {
       description: this.state.description,
       completed: false
     };
-    console.log(newTask);
     this.props.addANewTask(newTask);
+    this.setState({title:'',description:''}); 
   }
 
   handleInputChange(
@@ -49,6 +49,7 @@ class TaskForm extends React.Component<ITaskFormProps, any> {
               onChange={e => this.handleInputChange(e)}
               className="form-control"
               placeholder="Task Title"
+              value={this.state.title}
             />
           </div>
           <div className="form-group">
@@ -57,6 +58,7 @@ class TaskForm extends React.Component<ITaskFormProps, any> {
               onChange={e => this.handleInputChange(e)}
               className="form-control"
               placeholder="Task Description"
+              value = {this.state.description }
             />
           </div>
           <div className="form-group">
